@@ -7,8 +7,14 @@ interface RepositoryState {
   data: string[];
 }
 
+const initialState = {
+  loading: false,
+  error: null,
+  data: [],
+};
+
 function repositoriesReducer(
-  state: RepositoryState,
+  state: RepositoryState = initialState,
   action: Action
 ): RepositoryState {
   switch (action.type) {
