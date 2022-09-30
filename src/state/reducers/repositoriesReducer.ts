@@ -7,7 +7,10 @@ interface RepositoryState {
   data: string[];
 }
 
-function reducer(state: RepositoryState, action: Action): RepositoryState {
+function repositoriesReducer(
+  state: RepositoryState,
+  action: Action
+): RepositoryState {
   switch (action.type) {
     case ActionType.SEARCH_REPOSITORIES:
       return { loading: true, error: null, data: [] };
@@ -19,4 +22,4 @@ function reducer(state: RepositoryState, action: Action): RepositoryState {
       return state;
   }
 }
-export default reducer;
+export default repositoriesReducer;
